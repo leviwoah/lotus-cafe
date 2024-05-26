@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lotus Cafe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/nav.css">
+    <link rel="stylesheet" type="text/css" href="assets/menu.css">
+    <link rel="stylesheet" type="text/css" href="assets/cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Cinzel:wght@400;700&family=Josefin+Sans:wght@400;700&family=EB+Garamond:wght@400;700&display=swap">
+</head>
+<body>
+    <nav class="nav">
+        <img src="images/website_logo copy.png" alt="Logo" class="logo">
+        <ul>
+            <li><a href="cafe.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="cart-icon"><a href="#"><img src="images/cart-icon.png" alt="Cart"></a></li>
+        </ul>
+    </nav>
+
+    <header class="main-header">
+        <div class="overlay"></div>
+        <h1>Lotus Cafe - Menu</h1>
+    </header>
+    <div class="filter-container">
+        <button class="filter-btn">Filter</button>
+        <div class="filter-dropdown">
+            <div class="filter-option" onclick="filterMenu('all')">All</div>
+            <div class="filter-option" onclick="filterMenu('hot')">Hot</div>
+            <div class="filter-option" onclick="filterMenu('cold')">Cold</div>
+            <div class="filter-option" onclick="filterMenu('specialty')">Specialty</div>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <div class="menu-item hot">
+            <img src="images/espresso.webp" alt="Espresso" class="menu-item-image">
+            <h3 class="menu-item-title">Espresso</h3>
+            <p>Strong black espresso</p>
+            <div class="item-details">
+                <p class="menu-item-price">$2.50</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item hot">
+            <img src="images/cappuccino.webp" alt="Cappuccino" class="menu-item-image">
+            <h3 class="menu-item-title">Cappuccino</h3>
+            <p>Espresso with steamed milk and a layer of froth</p>
+            <div class="item-details">
+                <p class="menu-item-price">$3.00</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item hot">
+            <img src="images/americano.webp" alt="Americano" class="menu-item-image">
+            <h3 class="menu-item-title">Americano</h3>
+            <p>Espresso with hot water</p>
+            <div class="item-details">
+                <p class="menu-item-price">$2.50</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item hot">
+            <img src="images/affogato.webp" alt="Affogato" class="menu-item-image">
+            <h3 class="menu-item-title">Affogato</h3>
+            <p>Espresso with vanilla ice cream</p>
+            <div class="item-details">
+                <p class="menu-item-price">$4.00</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item cold">
+            <img src="images/cold-brew.webp" alt="Cold Brew" class="menu-item-image">
+            <h3 class="menu-item-title">Cold Brew</h3>
+            <p>Cold brewed coffee</p>
+            <div class="item-details">
+                <p class="menu-item-price">$3.50</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item hot">
+            <img src="images/cortado-coffee.webp" alt="Cortado" class="menu-item-image">
+            <h3 class="menu-item-title">Cortado</h3>
+            <p>Espresso with a small amount of steamed milk</p>
+            <div class="item-details">
+                <p class="menu-item-price">$3.00</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item hot">
+            <img src="images/flat-white.webp" alt="Flat White" class="menu-item-image">
+            <h3 class="menu-item-title">Flat White</h3>
+            <p>Espresso with steamed milk and microfoam</p>
+            <div class="item-details">
+                <p class="menu-item-price">$3.50</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item cold">
+            <img src="images/iced-latte.webp" alt="Iced Latte" class="menu-item-image">
+            <h3 class="menu-item-title">Iced Latte</h3>
+            <p>Espresso with cold milk and ice</p>
+            <div class="item-details">
+                <p class="menu-item-price">$4.00</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item cold">
+            <img src="images/iced-americano.webp" alt="Iced Americano" class="menu-item-image">
+            <h3 class="menu-item-title">Iced Americano</h3>
+            <p>Espresso with cold water and ice</p>
+            <div class="item-details">
+                <p class="menu-item-price">$3.00</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item hot">
+            <img src="images/mocha.webp" alt="Mocha" class="menu-item-image">
+            <h3 class="menu-item-title">Mocha</h3>
+            <p>Espresso with chocolate and steamed milk</p>
+            <div class="item-details">
+                <p class="menu-item-price">$4.50</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item hot">
+            <img src="images/macchiato.webp" alt="Macchiato" class="menu-item-image">
+            <h3 class="menu-item-title">Macchiato</h3>
+            <p>Espresso with a dash of steamed milk</p>
+            <div class="item-details">
+                <p class="menu-item-price">$3.50</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item cold">
+            <img src="images/mocha-frappuccino.webp" alt="Mocha Frappuccino" class="menu-item-image">
+            <h3 class="menu-item-title">Mocha Frappuccino</h3>
+            <p>Blended coffee with chocolate and ice</p>
+            <div class="item-details">
+                <p class="menu-item-price">$5.00</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item hot">
+            <img src="images/turkish-coffee.webp" alt="Turkish Coffee" class="menu-item-image">
+            <h3 class="menu-item-title">Turkish Coffee</h3>
+            <p>Traditional Turkish coffee with foam</p>
+            <div class="item-details">
+                <p class="menu-item-price">$3.00</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+        <div class="menu-item hot">
+            <img src="images/irish-coffee.webp" alt="Irish Coffee" class="menu-item-image">
+            <h3 class="menu-item-title">Irish Coffee</h3>
+            <p>Espresso with Irish whiskey and cream</p>
+            <div class="item-details">
+                <p class="menu-item-price">$5.50</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addToCartClicked(event)">Add</button>
+        </div>
+    </div>
+
+    <div class="cart-panel" id="cart-panel">
+        <button class="close-cart-btn" onclick="toggleCart()">X</button>
+        <h2>Your Cart</h2>
+        <ul class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </ul>
+        <div class="cart-total">
+            <strong>Total: $<span class="cart-total-price">0.00</span></strong>
+        </div>
+        <button class="btn btn-primary btn-checkout" type="button">Checkout</button>
+    </div>
+
+    <script src="assets/menu.js"></script>
+    <script src="assets/cart.js"></script>
+</body>
+</html>

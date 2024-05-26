@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lotus Cafe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Cinzel:wght@400;700&family=Josefin+Sans:wght@400;700&family=EB+Garamond:wght@400;700&display=swap">
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        font-family: 'Cinzel', sans-serif;
+      }
+
+      .main-header{
+        background-image:url("images/405a79ea-59c9-4945-b41c-c5dcddcdcce6.jpeg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 70vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        color:rgb(161, 82, 7);
+        position: relative;
+      }
+
+      .overlay{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 70vh; 
+        background-color: rgba(37, 33, 31, 0.8);
+      }
+
+      .content {
+        padding: 20px;
+        position: relative; 
+        z-index: 2;
+      }
+
+      .main-header h1{
+        position: relative;
+        z-index: 2;
+        font-size: 80px; 
+        margin-bottom: 0; 
+      }
+
+      .contact-container {
+        text-align: center;
+        padding: 50px;
+        border: 1px solid rgba(37, 33, 31, 0.8);
+        border-radius: 10px;
+      }
+
+      .contact-container h2 {
+        font-size: 40px;
+        margin-bottom: 30px;
+      }
+
+      .contact-form {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-form input[type="text"],
+      .contact-form input[type="email"],
+      .contact-form input[type="tel"],
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+
+      .contact-form input[type="text"],
+      .contact-form input[type="email"],
+      .contact-form input[type="tel"] {
+        height: 40px;
+      }
+
+      .contact-form textarea {
+        height: 150px;
+        resize: none;
+      }
+
+      .contact-form input[type="submit"] {
+        background-color: rgb(236, 137, 45);
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        padding: 15px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .contact-form input[type="submit"]:hover {
+        background-color: #b36f24;
+      }
+
+      .nav ul li:last-child {
+        margin-right: 20px;
+      }
+
+      .social-links img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+
+      .error {
+        border: 2px solid red;
+      }
+
+      .success-message {
+        color: green;
+        font-weight: bold;
+      }
+
+    </style>
+</head>
+<body>
+  <nav class="nav">
+    <img src="images/website_logo.png" alt="Logo" class="logo">
+    <ul>
+      <li><a href="cafe.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <header class="main-header">
+    <div class="overlay"></div>
+    <h1>Contact Us</h1>
+  </header>
+  <div class="contact-container">
+    <h2>Get in Touch</h2>
+    <div class="contact-form">
+      <form id="contact-form" method="post">
+        <input type="text" name="name" id="name" placeholder="Name" required><br>
+        <input type="email" name="email" id="email" placeholder="Email" required><br>
+        <input type="tel" name="phone" id="phone" placeholder="Phone Number" pattern="[0-9+]+" required><br>
+        <input type="text" name="subject" id="subject" placeholder="Subject" required><br>
+        <textarea name="message" id="message" placeholder="Message" required></textarea><br>
+        <input type="submit" value="Send Message">
+        <div id="success-message" class="success-message" style="display: none;">Message sent!</div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+      var subject = document.getElementById("subject").value.trim();
+      var message = document.getElementById("message").value.trim();
+
+      var isValid = true;
+
+      if (name === "") {
+        isValid = false;
+        document.getElementById("name").classList.add("error");
+      } else {
+        document.getElementById("name").classList.remove("error");
+      }
+
+      if (email === "") {
+        isValid = false;
+        document.getElementById("email").classList.add("error");
+      } else {
+        document.getElementById("email").classList.remove("error");
+      }
+
+      if (phone === "") {
+        isValid = false;
+        document.getElementById("phone").classList.add("error");
+      } else {
+        document.getElementById("phone").classList.remove("error");
+      }
+
+      if (subject === "") {
+        isValid = false;
+        document.getElementById("subject").classList.add("error");
+      } else {
+        document.getElementById("subject").classList.remove("error");
+      }
+
+      if (message === "") {
+        isValid = false;
+        document.getElementById("message").classList.add("error");
+      } else {
+        document.getElementById("message").classList.remove("error");
+      }
+
+      if (!isValid) {
+        alert("Please fill in all the fields!");
+      } else {
+        var formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('phone', phone);
+        formData.append('subject', subject);
+        formData.append('message', message);
+
+        fetch('sendmail.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          if (response.ok) {
+            document.getElementById("success-message").style.display = "block";
+            document.getElementById("contact-form").reset();
+          } else {
+            throw new Error('Network response was not ok.');
+          }
+        })
+        .catch(error => {
+          console.error('There has been a problem with your fetch operation:', error);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
