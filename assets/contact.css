@@ -1,0 +1,192 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'poetsen one', sans-serif;
+  }
+
+  body::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/cozy-cafe.webp");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.7;
+  }
+
+  .main-header{
+    background-image:url("../images/405a79ea-59c9-4945-b41c-c5dcddcdcce6.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color:rgb(161, 82, 7);
+    position: relative;
+  }
+
+  .overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 70vh; 
+    background-color: rgba(37, 33, 31, 0.8);
+  }
+
+  .content {
+    padding: 20px;
+    position: relative; 
+    z-index: 2;
+  }
+
+  .main-header h1{
+    position: relative;
+    z-index: 2;
+    font-size: 80px; 
+    margin-bottom: 0; 
+  }
+
+  .contact-container {
+    text-align: center;
+    padding: 50px;
+    border: 1px solid rgba(37, 33, 31, 0.8);
+    border-radius: 10px;
+  }
+
+  .contact-container h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  .contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="tel"],
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="tel"] {
+    height: 40px;
+  }
+
+  .contact-form textarea {
+    height: 150px;
+    resize: none;
+  }
+
+  .contact-form input[type="submit"] {
+    background-color: rgb(236, 137, 45);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .contact-form input[type="submit"]:hover {
+    background-color: #b36f24;
+  }
+
+  .nav ul li:last-child {
+    margin-right: 20px;
+  }
+
+  .social-links img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
+  .error {
+    border: 2px solid red;
+  }
+
+  .success-message {
+    color: green;
+    font-weight: bold;
+  }
+
+  /* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: 'Poetsen One', sans-serif; /* Using the correct font */
+  }
+  
+  .footer a {
+    color: rgb(255, 165, 0);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer a:hover {
+    color: rgb(255, 140, 0);
+  }
+  
+  .footer .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  .footer p {
+    margin: 0;
+    padding: 5px;
+  }
+  
+  .about, .menu-preview, .location-hours {
+    padding: 32px 20px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 11212;
+  }
+  
+  .about .container, .menu-preview .container, .location-hours .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Ensure readability */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .about p a.read-more {
+    font-size: 14px;
+    color: #ff9800;
+    text-decoration: underline;
+    font-family: 'Poetsen One', sans-serif;
+  }
+  

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lotus Cafe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/nav.css">
+    <link rel="stylesheet" type="text/css" href="assets/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Cinzel:wght@400;700&family=Josefin+Sans:wght@400;700&family=EB+Garamond:wght@400;700&display=swap">
+</head>
+<body>
+  <nav class="nav">
+    <a href="cafe.html" onclick="location.href='cafe.html'"><img src="images/website_logo copy.png" alt="Logo" class="logo"></a>
+    <ul>
+      <li><a href="cafe.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <header class="main-header">
+    <div class="overlay"></div>
+    <h1>Contact Us</h1>
+  </header>
+  
+  <div class="contact-container">
+    <h2>Get in Touch</h2>
+    <div class="contact-form">
+      <form id="contact-form" method="post">
+        <input type="text" name="name" id="name" placeholder="Name" required><br>
+        <input type="email" name="email" id="email" placeholder="Email" required><br>
+        <input type="tel" name="phone" id="phone" placeholder="Phone Number" pattern="[0-9+]+" required><br>
+        <input type="text" name="subject" id="subject" placeholder="Subject" required><br>
+        <textarea name="message" id="message" placeholder="Message" required></textarea><br>
+        <input type="submit" value="Send Message">
+        <div id="success-message" class="success-message" style="display: none;">Message sent!</div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+      var subject = document.getElementById("subject").value.trim();
+      var message = document.getElementById("message").value.trim();
+
+      var isValid = true;
+
+      if (name === "") {
+        isValid = false;
+        document.getElementById("name").classList.add("error");
+      } else {
+        document.getElementById("name").classList.remove("error");
+      }
+
+      if (email === "") {
+        isValid = false;
+        document.getElementById("email").classList.add("error");
+      } else {
+        document.getElementById("email").classList.remove("error");
+      }
+
+      if (phone === "") {
+        isValid = false;
+        document.getElementById("phone").classList.add("error");
+      } else {
+        document.getElementById("phone").classList.remove("error");
+      }
+
+      if (subject === "") {
+        isValid = false;
+        document.getElementById("subject").classList.add("error");
+      } else {
+        document.getElementById("subject").classList.remove("error");
+      }
+
+      if (message === "") {
+        isValid = false;
+        document.getElementById("message").classList.add("error");
+      } else {
+        document.getElementById("message").classList.remove("error");
+      }
+
+      if (!isValid) {
+        alert("Please fill in all the fields!");
+      } else {
+        var formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('phone', phone);
+        formData.append('subject', subject);
+        formData.append('message', message);
+
+        fetch('sendmail.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          if (response.ok) {
+            document.getElementById("success-message").style.display = "block";
+            document.getElementById("contact-form").reset();
+          } else {
+            throw new Error('Network response was not ok.');
+          }
+        })
+        .catch(error => {
+          console.error('There has been a problem with your fetch operation:', error);
+        });
+      }
+    });
+  </script>
+  <footer class="footer">
+    <p>&copy; 2024 Lotus Cafe. All rights reserved.</p>
+    <p>
+      <a href="https://www.instagram.com/s_mok_s/" target="_blank">
+        <img src="images/instagram.png" alt="Instagram" class="icon">Instagram
+      </a>
+      <a href="mailto:leviwhoa1@gmail.com">
+        <img src="images/email.png" alt="Email" class="icon">leviwhoa1@gmail.com
+      </a>
+      <a href="tel:+905314678233">
+        <img src="images/phone-call.png" alt="Phone" class="icon">+905314678233
+      </a>
+    </p>
+  </footer>
+</body>
+</html>

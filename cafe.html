@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lotus Cafe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/nav.css">
+    <link rel="stylesheet" type="text/css" href="assets/assets.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="nav">
+    <a href="cafe.html" onclick="location.href='cafe.html'"><img src="images/website_logo copy.png" alt="Logo" class="logo"></a>
+    <ul>
+      <li><a href="cafe.html" class="active">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li id="cart-icon"><a href="#"><img src="images/cart-icon.png" alt="Cart"></a></li>
+    </ul>
+  </nav>
+  
+  <!-- Cart Section -->
+  <div class="cart-container" id="cart">
+    <div class="cart-overlay"></div>
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <ul class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </ul>
+        <div class="cart-total">
+            <strong>Total: $<span class="cart-total-price">0.00</span></strong>
+        </div>
+        <button class="btn-purchase" type="button">Purchase</button>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="overlay"></div>
+    <h1>Lotus Cafe</h1>
+  </header>
+
+  <!-- About Section -->
+  <section class="about" data-parallax="scroll" data-image-src="images/about-bg.jpg">
+    <div class="container">
+      <h2>About Lotus Cafe</h2>
+      <p>Welcome to Lotus Cafe, your cozy corner for the finest coffee experiences. We blend passion, quality, and community spirit to bring you the best coffee and a warm ambiance. <a href="about.html" class="read-more">Read More</a></p>
+    </div>
+  </section>
+
+  <!-- Menu Preview Section -->
+  <section class="menu-preview" data-parallax="scroll" data-image-src="images/menu-bg.jpg">
+    <div class="container">
+      <h2>Our Popular Items</h2>
+      <div class="menu-items">
+        <div class="menu-item" onclick="location.href='menu.html'">
+          <img src="images/iced-mocha.webp" alt="Iced Mocha">
+          <h3>Iced Mocha</h3>
+          <p>Espresso with chocolate syrup, cold milk, and ice</p>
+          <p class="price">$4.50</p>
+        </div>
+        <div class="menu-item" onclick="location.href='menu.html'">
+          <img src="images/iced-latte.webp" alt="Iced Latte">
+          <h3>Iced Latte</h3>
+          <p>Espresso with cold milk and ice</p>
+          <p class="price">$4.00</p>
+        </div>
+        <div class="menu-item" onclick="location.href='menu.html'">
+          <img src="images/turkish-coffee.webp" alt="Turkish Coffee">
+          <h3>Turkish Coffee</h3>
+          <p>Traditional coffee made by boiling finely ground coffee beans</p>
+          <p class="price">$4.00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location and Hours Section -->
+  <section class="location-hours" data-parallax="scroll" data-image-src="images/location-bg.jpg">
+    <div class="container">
+      <h2>Our Location & Hours</h2>
+      <div class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3059.8449412846344!2d32.85176971201092!3d39.92248608545312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMznCsDU1JzIwLjkiTiAzMsKwNTEnMTUuNyJF!5e0!3m2!1sen!2str!4v1716642096473!5m2!1sen!2str" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="hours">
+        <h3>Opening Hours</h3>
+        <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
+        <p>Saturday: 9:00 AM - 6:00 PM</p>
+        <p>Sunday: Closed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2024 Lotus Cafe. All rights reserved.</p>
+    <p>
+      <a href="https://www.instagram.com/s_mok_s/" target="_blank">
+        <img src="images/instagram.png" alt="Instagram" class="icon">Instagram
+      </a>
+      <a href="mailto:leviwhoa1@gmail.com">
+        <img src="images/email.png" alt="Email" class="icon">leviwhoa1@gmail.com
+      </a>
+      <a href="tel:+905314678233">
+        <img src="images/phone-call.png" alt="Phone" class="icon">+905314678233
+      </a>
+    </p>
+  </footer>
+
+  <script src="assets/slider.js"></script>
+  <script src="assets/home-cart.js"></script>
+</body>
+</html>
